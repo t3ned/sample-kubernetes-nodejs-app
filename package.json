@@ -1,0 +1,42 @@
+{
+	"name": "envase",
+	"description": "A sample kubernetes Node.JS for my own referencing",
+	"author": "T3NED <software@t3ned.com>",
+	"license": "Apache-2.0",
+	"main": "dist/app.js",
+	"version": "1.0.0",
+	"private": true,
+	"engines": {
+		"node": ">=16.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:T3NED/sample-kubernetes-nodejs-app.git"
+	},
+	"scripts": {
+		"format": "npx prettier --write src",
+		"lint": "npx eslint src --ext js,ts --fix",
+		"build": "npx tsc -b .",
+		"start": "node dist/app.js",
+		"dev": "npx nodemon"
+	},
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.1",
+		"express": "^4.18.1"
+	},
+	"devDependencies": {
+		"@types/cors": "^2.8.12",
+		"@types/express": "^4.17.13",
+		"@types/node": "^17.0.35",
+		"@typescript-eslint/eslint-plugin": "^5.26.0",
+		"@typescript-eslint/parser": "^5.26.0",
+		"eslint": "^8.16.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"nodemon": "^2.0.16",
+		"prettier": "^2.6.2",
+		"ts-node": "^10.8.0",
+		"typescript": "^4.7.2"
+	}
+}
