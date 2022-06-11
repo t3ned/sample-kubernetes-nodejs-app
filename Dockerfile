@@ -6,7 +6,7 @@ WORKDIR /workspace/${APP_NAME}
 # Install dependencies
 COPY package.json pnpm-lock.yaml ./
 RUN npm i -g pnpm
-RUN pnpm install --prod --frozen-lockfile
+RUN pnpm install --frozen-lockfile
 
 # Checkout project
 COPY . ./
