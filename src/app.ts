@@ -1,13 +1,15 @@
 import fastify from "fastify";
 import "./index";
 
-import { errorHandler } from "./utils";
+import { errorHandler, notFoundHandler } from "./utils";
 import liveness from "./routes/v1/liveness";
 
 const app = fastify({
 	logger: true,
 	caseSensitive: false,
-}).setErrorHandler(errorHandler);
+})
+	.setErrorHandler(errorHandler)
+	.setNotFoundHandler(notFoundHandler);
 
 const host = process.env.APP_HOST ?? "localhost";
 const port = Number(process.env.APP_PORT) || 4444;
