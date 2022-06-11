@@ -1,0 +1,10 @@
+# Node build
+node_modules/
+
+# App build
+dist/
+
+# IDE
+.vscode/
+.idea/
+.git/
