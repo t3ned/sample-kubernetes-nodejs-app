@@ -1,9 +1,8 @@
 import type { FastifyPluginCallback } from "fastify";
+import { LivenessController } from "../../controllers/LivenessController";
 
 const users: FastifyPluginCallback = (app, _, done) => {
-	app.get("/users", () => {
-		return { hello: "world" };
-	});
+	app.get("/status", LivenessController.getStatus);
 
 	done();
 };

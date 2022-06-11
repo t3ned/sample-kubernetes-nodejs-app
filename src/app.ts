@@ -1,7 +1,7 @@
 import fastify from "fastify";
 import "./index";
 
-import users from "./routes/v1/users";
+import liveness from "./routes/v1/liveness";
 
 const app = fastify({
 	logger: true,
@@ -11,7 +11,7 @@ const app = fastify({
 const host = process.env.APP_HOST ?? "localhost";
 const port = Number(process.env.APP_PORT) || 4444;
 
-app.register(users);
+app.register(liveness, { prefix: "/api/v1/liveness" });
 
 const startApp = async () => {
 	await app.listen({ host, port });
