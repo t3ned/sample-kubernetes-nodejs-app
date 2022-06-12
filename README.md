@@ -6,3 +6,10 @@
 **_A sample kubernetes Node.JS for my own referencing_**
 
 </div>
+
+## Deploy
+
+```sh
+kubectl apply -f deploy/service.yaml
+kubectl apply -f deploy/deployment.yaml
+```
