@@ -11,7 +11,7 @@ const app = fastify({
 	.setErrorHandler(errorHandler)
 	.setNotFoundHandler(notFoundHandler);
 
-const host = process.env.APP_HOST ?? "localhost";
+const host = process.env.APP_HOST ?? "0.0.0.0";
 const port = Number(process.env.APP_PORT) || 4444;
 
 app.register(liveness, { prefix: "/api/v1/liveness" });
