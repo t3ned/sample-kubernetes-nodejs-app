@@ -7,9 +7,17 @@
 
 </div>
 
+## Prerequisites
+
+-   Install [Docker](https://docs.docker.com/get-docker)
+-   Install Kubernetes and create a
+    [cluster](https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster)
+-   Install [kubectl](https://kubernetes.io/docs/tasks/tools/)
+
 ## Deploy
 
 ```sh
-kubectl apply -f deploy/service.yaml
-kubectl apply -f deploy/deployment.yaml
+kubectl apply -f deploy
 ```
+
+Go to `http://localhost/api/v1/liveness/status`
