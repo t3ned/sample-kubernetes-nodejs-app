@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: envase
+    labels:
+        app: envase
+    annotations:
+spec:
+    selector:
+        matchLabels:
+            app: envase
+    replicas: 2
+    strategy:
+        type: RollingUpdate
+        rollingUpdate:
+            maxSurge: 1
+            maxUnavailable: 0
+    template:
+        metadata:
+            labels:
+                app: envase
+        spec:
+            containers:
+                - name: envase
+                  image: t3ned/envase
+                  imagePullPolicy: Always
+                  ports:
+                      - containerPort: 4444
+                  livenessProbe:
+                      httpGet:
+                          path: /api/v1/liveness/status
+                          port: 4444
+                      initialDelaySeconds: 3
+                      periodSeconds: 3
+                  resources:
+                      requests:
+                          memory: "64Mi"
+                          cpu: "50m"
+                      limits:
+                          memory: "256Mi"
+                          cpu: "500m"
