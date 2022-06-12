@@ -14,5 +14,9 @@ COPY . ./
 # Build app
 RUN pnpm build
 
+# Set and expose port
+ENV APP_PORT=4444
+EXPOSE 4444
+
 # Run app
 CMD ["sh", "./start-app.sh"]
