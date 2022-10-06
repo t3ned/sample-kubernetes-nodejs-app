@@ -1,7 +1,7 @@
 export class LivenessController {
 	public static getStatus() {
 		return {
-			debug: true
+			debug: false
 		};
 	}
 }
