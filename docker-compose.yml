@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+    app:
+        image: envase
+        restart: always
+        env_file:
+            - .env
+        ports:
+            - ${APP_PORT}:${APP_PORT}
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                APP_NAME: ${APP_NAME}
